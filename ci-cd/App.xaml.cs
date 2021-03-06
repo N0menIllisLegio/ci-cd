@@ -1,4 +1,6 @@
 ﻿using System.Windows;
+using ci_cd.ViewModels;
+using ci_cd.Views;
 using Prism.Ioc;
 using Prism.Unity;
 
@@ -15,6 +17,8 @@ namespace ci_cd
     }
 
     protected override void RegisterTypes(IContainerRegistry containerRegistry)
-    { }
+    {
+      containerRegistry.RegisterForNavigation<WishList, WishListViewModel>();
+    }
   }
 }
