@@ -10,5 +10,6 @@
     public string ReleaseDate { get; set; }
     public bool Free { get; set; }
     public string[] Tags { get; set; }
+    public decimal Price { get; set; }
   }
 }

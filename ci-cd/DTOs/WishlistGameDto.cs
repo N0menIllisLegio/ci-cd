@@ -30,5 +30,8 @@ namespace ci_cd.DTOs
 
     [JsonProperty("tags")]
     public string[] Tags { get; set; }
+
+    [JsonProperty("subs")]
+    public WishlistGameSubDto[] Subs { get; set; }
   }
 }

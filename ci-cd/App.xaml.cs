@@ -30,6 +30,8 @@ namespace ci_cd
       containerRegistry.RegisterInstance(typeof(IMapper),
         new MapperConfiguration(cfg => cfg.AddProfile<AutoMapperProfile>()).CreateMapper());
 
+      containerRegistry.RegisterDialog<ErrorDialog, ErrorDialogViewModel>();
+
       containerRegistry.RegisterForNavigation<WishList, WishListViewModel>();
     }
   }

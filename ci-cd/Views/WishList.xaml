@@ -15,6 +15,7 @@
   <UserControl.Resources>
     <utils:ArrayToStringConverter x:Key="ArrayToStringConverter" />
     <utils:BoolConverter x:Key="BoolConverter" />
+    <utils:WishlistPriceConverter x:Key="WishlistPriceConverter" />
   </UserControl.Resources>
   <Grid Background="Transparent">
     <Grid.RowDefinitions>
@@ -117,6 +118,7 @@
           </GridViewColumn>
 
           <GridViewColumn DisplayMemberBinding="{Binding Type}">Type</GridViewColumn>
+          <GridViewColumn DisplayMemberBinding="{Binding Price, Converter={StaticResource WishlistPriceConverter}}">Price</GridViewColumn>
           <GridViewColumn DisplayMemberBinding="{Binding ReviewScore}">Review Score</GridViewColumn>
           <GridViewColumn
               Width="200"

@@ -18,6 +18,7 @@ namespace ci_cd.ViewModels
     public WishListViewModel(ISteamService steamService)
     {
       _steamService = steamService;
+      SteamID = "76561198092532909";
     }
 
     public ObservableCollection<WishlistGameModel> Games
@@ -45,8 +46,12 @@ namespace ci_cd.ViewModels
     {
       ButtonLoadingIndicatorVisible = true;
 
-      Games = new ObservableCollection<WishlistGameModel>(
-        await _steamService.GetGameModelsAsync(SteamID));
+      var gamesList = await _steamService.GetGameModelsAsync(SteamID);
+
+      if (gamesList is not null)
+      {
+        Games = new ObservableCollection<WishlistGameModel>(gamesList);
+      }
 
       ButtonLoadingIndicatorVisible = false;
     }
