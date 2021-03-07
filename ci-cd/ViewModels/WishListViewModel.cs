@@ -1,27 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
+﻿using System.Collections.ObjectModel;
+using ci_cd.Interfaces.Services;
 using ci_cd.Models;
-using Prism.Commands;
 using Prism.Mvvm;
 
 namespace ci_cd.ViewModels
 {
   public class WishListViewModel : BindableBase
   {
-    private ObservableCollection<GameModel> _games;
+    private readonly ISteamService _steamService;
+    private ObservableCollection<WishlistGameModel> _games;
 
-    public WishListViewModel()
+    public WishListViewModel(ISteamService steamService)
     {
-      Games = new ObservableCollection<GameModel>
-      {
-        new GameModel {Title = "XCOM", Price = 3.99m},
-        new GameModel {Title = "King's Bounty: The Legend", Price = 3.99m},
-      };
+      _steamService = steamService;
+
+      _steamService.GetGameModelsAsync("")
+        .ContinueWith(async (result) => Games = new ObservableCollection<WishlistGameModel>(await result));
     }
 
-    public ObservableCollection<GameModel> Games
+    public ObservableCollection<WishlistGameModel> Games
     {
       get => _games;
       set => SetProperty(ref _games, value);

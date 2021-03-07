@@ -1,4 +1,10 @@
 ﻿using System.Windows;
+using AutoMapper;
+using ci_cd.Interfaces.Repositories;
+using ci_cd.Interfaces.Services;
+using ci_cd.Repositories;
+using ci_cd.Services;
+using ci_cd.Utils;
 using ci_cd.ViewModels;
 using ci_cd.Views;
 using Prism.Ioc;
@@ -18,6 +24,12 @@ namespace ci_cd
 
     protected override void RegisterTypes(IContainerRegistry containerRegistry)
     {
+      containerRegistry.Register<ISteamRepository, SteamRepository>();
+      containerRegistry.Register<ISteamService, SteamService>();
+
+      containerRegistry.RegisterInstance(typeof(IMapper),
+        new MapperConfiguration(cfg => cfg.AddProfile<AutoMapperProfile>()).CreateMapper());
+
       containerRegistry.RegisterForNavigation<WishList, WishListViewModel>();
     }
   }

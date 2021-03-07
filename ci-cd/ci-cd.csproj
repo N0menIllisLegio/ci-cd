@@ -8,6 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
     <PackageReference Include="MaterialDesignThemes" Version="4.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="5.0.3" />
@@ -22,6 +24,7 @@
     <PackageReference Include="Prism.Unity" Version="8.0.0.1909" />
     <PackageReference Include="Prism.Wpf" Version="8.0.0.1909" />
     <PackageReference Include="ShowMeTheXAML.MSBuild" Version="2.0.0" />
+    <PackageReference Include="SteamWebAPI2" Version="4.3.0" />
   </ItemGroup>
 
 </Project>

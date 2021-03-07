@@ -54,7 +54,7 @@
             </ListBox.Resources>
             <ListBox.ItemTemplate>
               <DataTemplate DataType="domain:DemoItem">
-                <TextBlock Text="{Binding Name}" Margin="32 0 32 0" AutomationProperties.AutomationId="DemoItemPage"/>
+                <TextBlock Text="{Binding Name}" Margin="32 0 32 0" AutomationProperties.AutomationId="DemoItemPage" />
               </DataTemplate>
             </ListBox.ItemTemplate>
           </ListBox>-->
@@ -72,7 +72,6 @@
                 x:Name="MenuToggleButton"
                 AutomationProperties.Name="HamburgerToggleButton"
                 IsChecked="False"
-              Command="{Binding Navigate}"
                 Style="{StaticResource MaterialDesignHamburgerToggleButton}" />
 
             <TextBlock
@@ -89,13 +88,10 @@
             <RowDefinition Height="*" />
           </Grid.RowDefinitions>
 
-          <ScrollViewer
+          <Frame
               Grid.Row="1"
-              materialDesign:ScrollViewerAssist.IsAutoHideEnabled="True">
-            <Frame
-                Margin="16"
-                prism:RegionManager.RegionName="MainRegion" />
-          </ScrollViewer>
+              Margin="16"
+              prism:RegionManager.RegionName="MainRegion" />
 
           <materialDesign:Snackbar
               x:Name="MainSnackbar"
