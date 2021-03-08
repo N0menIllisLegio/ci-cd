@@ -1,4 +1,6 @@
-﻿namespace ci_cd.Models
+﻿using System.Linq;
+
+namespace ci_cd.Models
 {
   public class WishlistGameModel
   {
@@ -11,5 +13,23 @@
     public bool Free { get; set; }
     public string[] Tags { get; set; }
     public decimal Price { get; set; }
+
+    public override bool Equals(object obj)
+    {
+      if (obj is WishlistGameModel compareWith)
+      {
+        return Name.Equals(compareWith.Name)
+          && Price.Equals(compareWith.Price)
+          && Free.Equals(compareWith.Free)
+          && ReleaseDate.Equals(compareWith.ReleaseDate)
+          && ReviewDescription.Equals(compareWith.ReviewDescription)
+          && ReviewScore.Equals(compareWith.ReviewScore)
+          && Tags.All(tag => compareWith.Tags.Contains(tag))
+          && Type.Equals(compareWith.Type)
+          && Banner.Equals(compareWith.Banner);
+      }
+
+      return false;
+    }
   }
 }
