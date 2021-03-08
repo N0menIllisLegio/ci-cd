@@ -6,7 +6,7 @@ using ci_cd.Interfaces.Repositories;
 
 namespace ci_cd.Repositories
 {
-  class SteamRepository : ISteamRepository
+  public class SteamRepository : ISteamRepository
   {
     public async Task<string> GetUserWishlistData(string steamID)
     {

@@ -2,7 +2,7 @@
 
 namespace ci_cd.Interfaces.Repositories
 {
-  internal interface ISteamRepository
+  public interface ISteamRepository
   {
     Task<string> GetUserWishlistData(string steamID);
   }

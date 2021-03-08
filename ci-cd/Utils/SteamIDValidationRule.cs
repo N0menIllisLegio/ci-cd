@@ -4,7 +4,7 @@ using System.Windows.Controls;
 
 namespace ci_cd.Utils
 {
-  class SteamIDValidationRule : ValidationRule
+  public class SteamIDValidationRule : ValidationRule
   {
     public override ValidationResult Validate(object value, CultureInfo cultureInfo)
     {

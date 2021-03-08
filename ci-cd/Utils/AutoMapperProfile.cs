@@ -5,7 +5,7 @@ using ci_cd.Models;
 
 namespace ci_cd.Utils
 {
-  class AutoMapperProfile : Profile
+  public class AutoMapperProfile : Profile
   {
     public AutoMapperProfile()
     {
