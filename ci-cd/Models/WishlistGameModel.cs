@@ -31,5 +31,18 @@ namespace ci_cd.Models
 
       return false;
     }
+
+    public override int GetHashCode()
+    {
+      unchecked
+      {
+        int hash = 17;
+        hash = hash * 23 + Name.GetHashCode();
+        hash = hash * 23 + Type.GetHashCode();
+        hash = hash * 23 + Banner.GetHashCode();
+        hash = hash * 23 + Price.GetHashCode();
+        return hash;
+      }
+    }
   }
 }

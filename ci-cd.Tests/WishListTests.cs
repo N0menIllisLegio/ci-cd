@@ -6,7 +6,6 @@ using ci_cd.Interfaces.Repositories;
 using ci_cd.Models;
 using ci_cd.Repositories;
 using ci_cd.Services;
-using ci_cd.Tests.EqualityComparers;
 using ci_cd.Utils;
 using Moq;
 using Xunit;
